@@ -1,5 +1,5 @@
 WORLD_PROMPT = """
-2030년, 거대한 태양풍으로 전력과 통신망이 붕괴하며 사회는 무너졌다.
+2030년, 거대한 태양풍으로 전력과 통신망이 붕괴하며 한순간에 사회는 무너졌다.
 
 국가 체계는 복구되지 못했고, 폭력과 집단 생존만이 새로운 질서가 되었다.
 
@@ -23,10 +23,8 @@ CHARACTER_PROMPTS = {
 def build_prompt(world: str, 
                  persona: str, 
                  state: str | None,
-                 history:str,
-                 safety:str,
                  user_msg: str) -> str:
-    parts = [safety+world+persona+history]
+    parts = [world+persona]
     if state:
         parts.append(f"[세계관 참고]\n{state.strip()}")
     parts.append(f"사용자: {user_msg}\nAI:")
