@@ -1,0 +1,5 @@
+docker rm $(docker images -q) 컨테이너에서 안쓰는거 다 삭제
+
+docker run 생성과 동시에 실행
+
+docker exec -it id값 bash 컨테이너에 직접 들가기
